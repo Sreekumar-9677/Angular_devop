@@ -11,11 +11,14 @@ RUN npm run build --configuration=production
 FROM nginx:alpine
 
 # Copy compiled Angular app
-COPY --from=builder /app/dist/my-angular-app /usr/share/nginx/html
+
+COPY --from=builder /app/dist/my-angular-app/browser /usr/share/nginx/html
+
 
 # Remove default config and add our own
 RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/conf.d/default.conf
+
 
 # Use Cloud Run's expected port
 ENV PORT 8080
