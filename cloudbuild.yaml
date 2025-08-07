@@ -17,4 +17,4 @@ steps:
       ]
 
 images:
-  - 'gcr.io/$PROJECT_ID/angular-app'
+  - 'gcr.io/omega-terrain-450302-m3/angular-app'
