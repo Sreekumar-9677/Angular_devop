@@ -15,10 +15,11 @@ COPY --from=builder /app/dist/my-angular-app /usr/share/nginx/html
 
 # Remove default config and add our own
 RUN rm /etc/nginx/conf.d/default.conf
-COPY nginx.conf /etc/nginx/conf.d
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Use Cloud Run's expected port
 ENV PORT 8080
 EXPOSE 8080
 
 CMD ["nginx", "-g", "daemon off;"]
+
