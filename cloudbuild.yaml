@@ -1,20 +1,39 @@
+# steps:
+#   - name: 'gcr.io/cloud-builders/docker'
+#     args: ['build', '-t', 'gcr.io/omega-terrain-450302-m3/angular-app', '.']
+
+#   - name: 'gcr.io/cloud-builders/docker'
+#     args: ['push', 'gcr.io/omega-terrain-450302-m3/angular-app']
+
+#   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+#     entrypoint: gcloud
+#     args:
+#       [
+#         'run', 'deploy', 'angular-app',
+#         '--image', 'gcr.io/omega-terrain-450302-m3/angular-app',
+#         '--region', 'us-central1',
+#         '--platform', 'managed',
+#         '--allow-unauthenticated'
+#       ]
+
+# images:
+#   - 'gcr.io/omega-terrain-450302-m3/angular-app'
+
+
+
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/omega-terrain-450302-m3/angular-app', '.']
-
+    args: [
+      'build',
+      '-t',
+      'gcr.io/omega-terrain-450302-m3/angular-app',
+      '.'
+    ]
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/omega-terrain-450302-m3/angular-app']
-
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: gcloud
-    args:
-      [
-        'run', 'deploy', 'angular-app',
-        '--image', 'gcr.io/omega-terrain-450302-m3/angular-app',
-        '--region', 'us-central1',
-        '--platform', 'managed',
-        '--allow-unauthenticated'
-      ]
+    args: [
+      'push',
+      'gcr.io/omega-terrain-450302-m3/angular-app'
+    ]
 
 images:
   - 'gcr.io/omega-terrain-450302-m3/angular-app'
