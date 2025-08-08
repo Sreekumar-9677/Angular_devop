@@ -26,14 +26,14 @@ steps:
     args: [
       'build',
       '-t',
-      'gcr.io/omega-terrain-450302-m3/angular-app',
+      'gcr.io/omega-terrain-450302-m3/my-angular-app',
       '.'
     ]
   - name: 'gcr.io/cloud-builders/docker'
     args: [
       'push',
-      'gcr.io/omega-terrain-450302-m3/angular-app'
+      'gcr.io/omega-terrain-450302-m3/my-angular-app'
     ]
 
 images:
-  - 'gcr.io/omega-terrain-450302-m3/angular-app'
+  - 'gcr.io/omega-terrain-450302-m3/my-angular-app'
